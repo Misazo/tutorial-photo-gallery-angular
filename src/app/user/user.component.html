@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header>
+    
+    <ion-card-title>{{name}} {{username}}</ion-card-title>
+    <ion-card-subtitle>{{email}} {{phone}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{city}} {{street}} {{suite}}
+  </ion-card-content>
+</ion-card>
+<ion-content>
+  <div class="col-xs-12" style="margin-left: 10vh;">
+    <h2>Listes des Tâches</h2>
+    
+    <ul class="list-group">
+      <div *ngFor = "let todo of userTodo">
+                    <li class ="list-group-item-success" *ngIf ="id === todo.userId">
+                      <p [ngStyle] = "{color:getColor(todo.completed)}">{{todo.title}}</p>
+                    </li>
+      </div>
+    </ul>
+  </div>
+</ion-content>
+

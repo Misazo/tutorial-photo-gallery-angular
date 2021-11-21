@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Todo List
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>
+  <div class="col-xs-12" style="margin-left: 10vh;">
+    <h2>Liste d'utilisateurs</h2>
+    
+    <ul class="list-group">
+      <app-user-list *ngFor = "let user of listUsers"  
+                    [id] = "user.id"
+                    [name] = "user.name"
+                    [user] = "user"
+      ></app-user-list>
+    </ul>
+  </div>
+
+  
+</ion-content> 
